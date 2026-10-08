@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Panier Perdu — Récupère les paniers abandonnés de ta boutique</title>
-<meta name="description" content="Deux relances automatiques pour les petites boutiques Shopify. Prix fondateur 19 €/mois, réservé à la liste d'attente. Aucun paiement maintenant.">
+<meta name="description" content="Deux relances automatiques pour les petites boutiques Shopify. Prix fondateur 29 €/mois, réservé à la liste d'attente. Aucun paiement maintenant.">
 <meta property="og:title" content="Panier Perdu — Récupère les paniers abandonnés de ta boutique">
 <meta property="og:description" content="Deux relances automatiques pour les petites boutiques Shopify. Rejoins la liste d'attente.">
 <meta property="og:type" content="website">
@@ -34,7 +34,7 @@ input::placeholder{color:#6F7FA6}
 button,.cta{display:block;width:100%;text-align:center;text-decoration:none;background:var(--safran);color:var(--nuit);font:inherit;font-weight:800;font-size:1.08rem;padding:17px 16px;min-height:56px;border-radius:8px;border:0;cursor:pointer;box-shadow:0 0 28px rgba(242,176,30,.28)}
 button:disabled{opacity:.6}
 input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--safran);outline-offset:3px}
-#msg{font-weight:700;margin:12px 0 0;min-height:1.4em}
+#msg{font-weight:700;margin:12px 0 0}#msg:empty{display:none}
 .garanties{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;font-size:.95rem;color:var(--gris)}
 .garanties li{padding-left:26px;position:relative}
 .garanties li:before{content:"";position:absolute;left:3px;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--safran);border-bottom:2.5px solid var(--safran);transform:rotate(-45deg)}
@@ -54,13 +54,13 @@ input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{o
 details{border-bottom:1px solid var(--trait);padding:15px 0}
 summary{font-weight:700;cursor:pointer;min-height:28px}
 details p{margin:10px 0 0;color:var(--gris)}
-.barre{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,18,38,.96);border-top:1px solid var(--trait);z-index:5}
-.barre .cta{max-width:608px;margin:0 auto;min-height:52px;padding:14px}
+.barre{transition:transform .25s ease;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,18,38,.96);border-top:1px solid var(--trait);z-index:5}
+.barre.cache{transform:translateY(110%)}.barre .cta{max-width:608px;margin:0 auto;min-height:52px;padding:14px}
 footer{padding:28px 20px 40px;border-top:1px solid var(--trait);font-size:.9rem;color:var(--gris)}
 footer a{color:var(--texte);margin-right:14px;display:inline-block;padding:6px 0}
 .legal{padding:22px 0;font-size:.92rem}.legal h2{font-size:1.05rem;color:var(--texte)}.legal strong{color:var(--texte)}
 @media(min-width:700px){h1{font-size:3.2rem}}
-@media(prefers-reduced-motion:reduce){.rail .pt{animation:none;top:0;opacity:1}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.barre{transition:none}.rail .pt{animation:none;top:0;opacity:1}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -101,8 +101,8 @@ footer a{color:var(--texte);margin-right:14px;display:inline-block;padding:6px 0
 <section>
 <h2>Prix fondateur</h2>
 <div class="offre">
-<div class="prix">19 €<small> /mois, soit 0,63 € par jour</small></div>
-<p>Réservé à la liste d'attente, et gardé tant que ton abonnement reste actif. Relances illimitées. Prix public : 29 €/mois.</p>
+<div class="prix">29 €<small> /mois, soit 0,97 € par jour</small></div>
+<p>Réservé à la liste d'attente, et gardé tant que ton abonnement reste actif. Relances illimitées. Prix public : 49 €/mois.</p>
 <p style="font-weight:700">Tu ne paies rien aujourd'hui. À l'ouverture, tu reçois un email et tu décides. Sans engagement, résiliable à tout moment, remboursé si l'outil ne te convient pas.</p>
 <a class="cta" href="#inscription">Rejoindre la liste d'attente</a>
 </div>
@@ -135,7 +135,7 @@ footer a{color:var(--texte);margin-right:14px;display:inline-block;padding:6px 0
 <div class="legal" id="cgv">
 <h2>Conditions générales de vente</h2>
 <p><strong>1. Objet.</strong> Les présentes conditions régissent l'abonnement mensuel au service en ligne Panier Perdu, édité par Hénok Bandala (coordonnées dans les mentions légales). Le service envoie des relances automatiques aux clients ayant abandonné leur panier sur la boutique de l'abonné.</p>
-<p><strong>2. Prix.</strong> Prix fondateur : 19 € par mois, réservé aux personnes inscrites sur la liste d'attente, conservé tant que l'abonnement reste actif. Prix public : 29 € par mois. TVA non applicable, article 293 B du CGI.</p>
+<p><strong>2. Prix.</strong> Prix fondateur : 29 € par mois, réservé aux personnes inscrites sur la liste d'attente, conservé tant que l'abonnement reste actif. Prix public : 49 € par mois. TVA non applicable, article 293 B du CGI.</p>
 <p><strong>3. Paiement.</strong> Paiement par carte bancaire via Stripe, au moment de la souscription puis chaque mois, jusqu'à résiliation.</p>
 <p><strong>4. Accès au service.</strong> L'accès est ouvert après le paiement, par email. Si l'accès n'est pas ouvert sous 14 jours après le paiement, l'abonné est remboursé intégralement sur simple demande.</p>
 <p><strong>5. Garantie satisfait ou remboursé.</strong> Une fois l'accès ouvert, l'abonné peut demander le remboursement de son premier paiement pendant 30 jours, par email à panierperdu.contact@gmail.com. Le remboursement est effectué sous 5 jours ouvrés.</p>
@@ -158,6 +158,11 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'applicatio
 .then(function(r){if(r.ok){f.reset();m.textContent='C\u2019est noté. Tu seras prévenu à l\u2019ouverture.';}else{throw 0;}})
 .catch(function(){m.textContent='L\u2019envoi a échoué. Vérifie ton email et réessaie.';b.disabled=false;});
 });
+</script>
+<script>
+(function(){var b=document.querySelector('.barre'),f=document.getElementById('f');
+if(!b||!f||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){b.classList.toggle('cache',e[0].isIntersecting);},{threshold:0.35}).observe(f);})();
 </script>
 </body>
 </html>
